@@ -10,10 +10,11 @@ As mentioned earlier, copy and paste the code in "code.js" to console, here's a 
 And press Enter.      
 As of now, this must be done everytime you refresh/open the game.
 
-## Add Dark Mode
+## Enable Dark Mode
 ```
 window.snake.dark();
 ```
+If you want to disable, just refresh.
 
 ## Give custom colors to board - may be used for light mode
 ```
@@ -26,6 +27,7 @@ window.snake.scheme({
   darkSquares:  '#rrggbb', // hex code for the dark board squares, defaults to default
 }); // if not given any arguments, it will be the default scheme (with the page background the same color as the score bar)
 ```
+If you want to disable, just refresh.
 
 ## Enable FishesHUD
 ```
@@ -38,6 +40,7 @@ window.snake.fishesHUD({
   showLilSebastianImages: boolean,   // true/false, whether to show the images of lil sebastian (idk why this exists lol)
 }); // if not given any arguments, it will be my favorite layout (for dark mode)
 ```
+If you want to disable, just refresh.
 
 ### Collaborators
 * Llama
