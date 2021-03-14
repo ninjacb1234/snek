@@ -1,6 +1,4 @@
-yeah you don't get a file type LOL
-
-hi there hello it's me fishes, the guy who accidentally got himself into making dark mode
+hi there hello it's me fishes, the guy who accidentally got himself into making dark mode (man i just made a layout how did we get here)
 
 anyway first huge shoutout to llama, yk the guy who made the 38 second classic tas,
 who did basically everything smart in this project
