@@ -4,6 +4,12 @@ This project has JavaScript code that when pasted directly to "console" in the b
 Must use this link for the game: https://www.google.com/fbx?fbx=snake_arcade      
 Support on Chrome and Opera. Other browser may or may not work, please use the supported browsers.      
 
+## Making it work
+As mentioned earlier, copy and paste the code in "code.js" to console, here's a screenshot:     
+![image](https://user-images.githubusercontent.com/6286286/111076598-95cc9a00-84f5-11eb-9a38-e71bddeb97e4.png)
+And press Enter.      
+As of now, this must be done everytime you refresh/open the game.
+
 ## Add Dark Mode
 ```
 window.snake.dark();
