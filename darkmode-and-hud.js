@@ -36,7 +36,7 @@ window.snake.scheme = function(settings = {}) {
   req.open("GET", url);
   req.onload = function() {
     processSnakeCode(this.responseText);
-  }
+  };
   req.send();
 
   function processSnakeCode(snakeCode) {
