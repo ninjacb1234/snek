@@ -1,8 +1,8 @@
 # Dark Mode for Google Snake
 
-This project has JavaScript code that when pasted directly to "console" in the browser, adds functions to Google Snake Game.     
-Must use this link for the game: https://www.google.com/fbx?fbx=snake_arcade
-Support on Chrome and Opera. Other browser may or may not work, please use the supported browsers.
+This project has JavaScript code that when pasted directly to "console" in the browser, adds functions to Google Snake Game.           
+Must use this link for the game: https://www.google.com/fbx?fbx=snake_arcade      
+Support on Chrome and Opera. Other browser may or may not work, please use the supported browsers.      
 
 ## Add Dark Mode
 ```
