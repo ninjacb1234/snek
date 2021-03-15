@@ -62,3 +62,14 @@ window.snake.dark = function() {
     darkSquares: '#423C49',
   });
 };
+
+window.snake.oldDark = function() {
+  return window.snake.scheme({
+    scoreBar: '#000000',
+    border: '#101010',
+    walls: '#888888',
+    shadows: '#111111',
+    lightSquares: '#171717',
+    darkSquares: '#1E1E1E',
+  });
+};
