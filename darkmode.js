@@ -1,8 +1,10 @@
 window.snake.scheme = function(settings = {}) {
   if(settings.scoreBar === undefined)
     settings.scoreBar = '#4A752C';
+  if(settings.border === undefined)
+    settings.border = '578A34#';
   if(settings.walls === undefined)
-    settings.walls = '#578A34';
+    settings.walls = settings.border;  
   if(settings.shadows === undefined)
     settings.shadows = '#94BD46';
   if(settings.lightSquares === undefined)
@@ -40,7 +42,8 @@ window.snake.scheme = function(settings = {}) {
   req.send();
 
   function processSnakeCode(snakeCode) {
-    const darkModeCode = snakeCode.replace(/#578A34/g, settings.walls)        // walls
+    const darkModeCode = snakeCode.replace(/#578A34/, settings.border)        // border - only replace first occurrence
+                                  .replace(/#578A34/g, settings.walls)        // walls
                                   .replace(/#94BD46/g, settings.shadows)      // shadows
                                   .replace(/#A2D149/g, settings.lightSquares) // light squares
                                   .replace(/#AAD751/g, settings.darkSquares); // dark squares
@@ -51,10 +54,11 @@ window.snake.scheme = function(settings = {}) {
 
 window.snake.dark = function() {
   return window.snake.scheme({
-    scoreBar: '#000000',
+    scoreBar: '#262428',
+    border: '#2E2933',
     walls: '#101010',
-    shadows: '#111111',
-    lightSquares: '#171717',
-    darkSquares: '#1E1E1E',
+    shadows: '#302C35',
+    lightSquares: '#47404F',
+    darkSquares: '#423C49',
   });
 };
