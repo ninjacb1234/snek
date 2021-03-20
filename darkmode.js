@@ -24,15 +24,15 @@ window.snake.scheme = function(settings = {}) {
 
   const scriptElements = document.getElementsByTagName('script');
   let url;
-  if(/.*google.*fbx\?fbx=snake_arcade/.test(window.location.href)) {//If on fbx website
-    url = scriptElements[scriptElements.length - 1].src; // Source code belongs to the bottom script tag
-  } else if(/.*google.*/.test(window.location.href)) {//If on google search
-	url = scriptElements[scriptElements.length - 4].src; // Source code belongs to fourth from bottom script tag
+  if(/.*google.*fbx\?fbx=snake_arcade/.test(window.location.href)) {/*If on fbx website*/
+    url = scriptElements[scriptElements.length - 1].src; /*Source code belongs to the bottom script tag*/
+  } else if(/.*google.*/.test(window.location.href)) {/*If on google search*/
+	url = scriptElements[scriptElements.length - 4].src;/* Source code belongs to fourth from bottom script tag*/
   } else{
 	 alert("Wrong Website!");
   }
   
-  // xhr to get source code
+  /* xhr to get source code*/
   const req = new XMLHttpRequest();
   
   req.open("GET", url);
@@ -42,11 +42,11 @@ window.snake.scheme = function(settings = {}) {
   req.send();
 
   function processSnakeCode(snakeCode) {
-    const darkModeCode = snakeCode.replace(/#578A34/, settings.border)        // border - only replace first occurrence
-                                  .replace(/#578A34/g, settings.walls)        // walls
-                                  .replace(/#94BD46/g, settings.shadows)      // shadows
-                                  .replace(/#A2D149/g, settings.lightSquares) // light squares
-                                  .replace(/#AAD751/g, settings.darkSquares); // dark squares
+    const darkModeCode = snakeCode.replace(/#578A34/, settings.border)        /* border - only replace first occurrence*/
+                                  .replace(/#578A34/g, settings.walls)        /* walls*/
+                                  .replace(/#94BD46/g, settings.shadows)      /* shadows*/
+                                  .replace(/#A2D149/g, settings.lightSquares) /* light squares*/
+                                  .replace(/#AAD751/g, settings.darkSquares); /* dark squares*/
                                   
     regexes.forEach(r => (/*console.log(darkModeCode.match(r)),*/darkModeCode.match(r) != null ? eval(darkModeCode.match(r)[0]) : 0));
   }
