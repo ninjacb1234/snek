@@ -13,8 +13,6 @@ window.snake.scheme = function(settings = {}) {
     settings.darkSquares = '#AAD751';
   
   document.body.bgColor = settings.background || settings.scoreBar;
-  document.body.getElementsByClassName('sEOCsb')[0].style.backgroundColor = settings.scoreBar;
-
 
   const regexes = [
     new RegExp(`[$a-zA-Z0-9_]{0,6}=function\\(a\\){[^}]*globalCompositeOperation="destination-atop"[^}]*fillStyle="${settings.shadows}";[^}]*}`),
@@ -26,8 +24,10 @@ window.snake.scheme = function(settings = {}) {
   let url;
   if(/.*google.*fbx\?fbx=snake_arcade/.test(window.location.href)) {/*If on fbx website*/
     url = scriptElements[scriptElements.length - 1].src; /*Source code belongs to the bottom script tag*/
+    document.getElementsByTagName("canvas")[0].parentElement.parentElement.childNodes[2].style.backgroundColor = settings.scoreBar;
   } else if(/.*google.*/.test(window.location.href)) {/*If on google search*/
-	url = scriptElements[scriptElements.length - 4].src;/* Source code belongs to fourth from bottom script tag*/
+	  url = scriptElements[scriptElements.length - 4].src;/* Source code belongs to fourth from bottom script tag*/
+    document.getElementsByTagName("canvas")[0].parentElement.parentElement.childNodes[0].style.backgroundColor = settings.scoreBar;
   } else{
 	 alert("Wrong Website!");
   }
