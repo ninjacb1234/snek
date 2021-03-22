@@ -2,7 +2,7 @@ window.snake.scheme = function(settings = {}) {
   if(settings.scoreBar === undefined)
     settings.scoreBar = '#4A752C';
   if(settings.border === undefined)
-    settings.border = '578A34#';
+    settings.border = '#578A34';
   if(settings.walls === undefined)
     settings.walls = settings.border;  
   if(settings.shadows === undefined)
