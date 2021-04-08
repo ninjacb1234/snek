@@ -13,6 +13,7 @@ window.snake.scheme = function(settings = {}) {
     settings.darkSquares = '#AAD751';
   
   document.body.bgColor = settings.background || settings.scoreBar;
+  document.body.getElementsByClassName('sEOCsb')[0].style.backgroundColor = settings.scoreBar;
 
   const regexes = [
     new RegExp(`[$a-zA-Z0-9_]{0,6}=function\\(a\\){[^}]*globalCompositeOperation="destination-atop"[^}]*fillStyle="${settings.shadows}";[^}]*}`),
@@ -20,26 +21,25 @@ window.snake.scheme = function(settings = {}) {
     /[$a-zA-Z0-9_]{0,6}\.prototype\.[$a-zA-Z0-9_]{0,6}=function\(\){var a=this,b=[$a-zA-Z0-9_]{0,6}\(\);[^]*?;return [$a-zA-Z0-9_]{0,6}\.promise}/,
   ];
 
-  const scriptElements = document.getElementsByTagName('script');
-  let url;
-  if(/.*google.*fbx\?fbx=snake_arcade/.test(window.location.href)) {/*If on fbx website*/
-    url = scriptElements[scriptElements.length - 1].src; /*Source code belongs to the bottom script tag*/
-    document.getElementsByTagName("canvas")[0].parentElement.parentElement.childNodes[2].style.backgroundColor = settings.scoreBar;
-  } else if(/.*google.*/.test(window.location.href)) {/*If on google search*/
-	  url = scriptElements[scriptElements.length - 4].src;/* Source code belongs to fourth from bottom script tag*/
-    document.getElementsByTagName("canvas")[0].parentElement.parentElement.childNodes[0].style.backgroundColor = settings.scoreBar;
-  } else{
-	 alert("Wrong Website!");
-  }
-  
-  /* xhr to get source code*/
-  const req = new XMLHttpRequest();
-  
-  req.open("GET", url);
-  req.onload = function() {
-    processSnakeCode(this.responseText);
-  };
-  req.send();
+  const scripts = document.getElementsByTagName("script");
+	/*find the script*/
+	for(let script of scripts){
+		if(script.src != "" && script.src.indexOf('apis.google.com')==-1){
+			/* xhr to get source code */
+			try{
+				const req = new XMLHttpRequest();
+				req.open("GET", script.src);
+				req.onload = function() {
+					/*check if this is the snake script*/
+					if(this.responseText.indexOf('trophy') != -1){
+						processSnakeCode(this.responseText);
+					}
+				};
+				req.send();
+			}
+			catch{}
+		}
+	}
 
   function processSnakeCode(snakeCode) {
     const darkModeCode = snakeCode.replace(/#578A34/, settings.border)        /* border - only replace first occurrence*/
