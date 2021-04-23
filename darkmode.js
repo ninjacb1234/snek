@@ -17,7 +17,7 @@ window.snake.scheme = function(settings = {}) {
 
   const regexes = [
     new RegExp(`[$a-zA-Z0-9_]{0,6}=function\\(a\\){[^}]*globalCompositeOperation="destination-atop"[^}]*fillStyle="${settings.shadows}";[^}]*}`),
-    new RegExp(`[$a-zA-Z0-9_]{0,6}\.prototype\.[$a-zA-Z0-9_]{0,6}=function\\(a\\){if\\(this\\.[$a-zA-Z0-9_]{0,6}&&!this\\.[$a-zA-Z0-9_]{0,6}\\){if\\([$a-zA-Z0-9_]{0,6}\\(this,8\\)[^]*?${settings.lightSquares.replace(/#/g, '')}[^]*?\\(\\),a\\)\\)}}`),
+    /[$a-zA-Z0-9_]{0,6}\.prototype\.[$a-zA-Z0-9_]{0,6}=function\(a\){if\(this\.[$a-zA-Z0-9_]{0,6}&&!this\.[$a-zA-Z0-9_]{0,6}\){if[^]*?\"\)\.[$a-zA-Z0-9_]{0,6}\(\),[$a-zA-Z0-9_]{0,6}\)}}}/,
     /[$a-zA-Z0-9_]{0,6}\.prototype\.[$a-zA-Z0-9_]{0,6}=function\(\){var a=this,b=[$a-zA-Z0-9_]{0,6}\(\);[^]*?;return [$a-zA-Z0-9_]{0,6}\.promise}/,
   ];
 
