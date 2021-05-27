@@ -5,7 +5,7 @@ Must use this link for the game: https://www.google.com/fbx?fbx=snake_arcade
 Support on Chrome and Opera. Other browser may or may not work, please use the supported browsers.      
 
 ## Making it work
-As mentioned earlier, copy and paste the code in "code.js" to console, here's a screenshot:     
+As mentioned earlier, copy and paste the code in "darkmode.js" to console, here's a screenshot:     
 ![image](https://user-images.githubusercontent.com/6286286/111076598-95cc9a00-84f5-11eb-9a38-e71bddeb97e4.png)
 And press Enter.      
 As of now, this must be done everytime you refresh/open the game.
@@ -25,6 +25,11 @@ window.snake.scheme({
   shadows:      '#rrggbb', // hex code for snake and fruit shadows, defaults to default
   lightSquares: '#rrggbb', // hex code for the light board squares, defaults to default
   darkSquares:  '#rrggbb', // hex code for the dark board squares, defaults to default
+  lightGoal:    '#rrggbb', // hex code for the dark sections of the Sokoban goals; optional:  defaults to an altered version of darkSqures if omitted
+  darkGoal:     '#rrggbb', // hex code for the light sections of the Sokoban goals; optional: defaults to an altered version of lightSqures if omitted
+  sky:          '#rrggbb', // hex code for the sky color in the menu, defaults to default
+  separators:   '#rrggbb', // hex code for thin separators in menu, defaults to default
+  buttons:      '#rrggbb', // hex code for color of play and options buttons, defaults to default
 }); // if not given any arguments, it will be the default scheme (with the page background the same color as the score bar)
 ```
 If you want to disable, just refresh.
